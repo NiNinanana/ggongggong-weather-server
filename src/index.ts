@@ -1,5 +1,6 @@
-import express, { Request, Response } from "express";
 import dotenv from "dotenv";
+import express, { Request, Response } from "express";
+import { getLegalDongFromCoords } from "./getLegalDongFromCoords";
 import { getShortForecast } from "./getShortForecast";
 
 dotenv.config();
@@ -16,6 +17,8 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.get("/weather/short-forecast", getShortForecast);
+
+app.get("/geolocation/legal-from-coords", getLegalDongFromCoords);
 
 // 서버 시작
 app.listen(port, () => {
