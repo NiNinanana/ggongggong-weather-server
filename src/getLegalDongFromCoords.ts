@@ -21,7 +21,7 @@ export const getLegalDongFromCoords = async (req: Request, res: Response) => {
       },
     });
 
-    res.json(data);
+    res.json({ legalDong: data.results[0].region.area3.name });
   } catch (error) {
     console.error(error);
     res.status(500).send("Failed to fetch legalDong data");
