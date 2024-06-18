@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import { getLegalDongFromCoords } from "./getLegalDongFromCoords";
 import { getShortForecast } from "./getShortForecast";
+import { getUltraShortForecast } from "./getUltraShortForecast";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.get("/weather/short-forecast", getShortForecast);
+app.get("/weather/ultra-short-forecast", getUltraShortForecast);
 
 app.get("/geolocation/legal-from-coords", getLegalDongFromCoords);
 
